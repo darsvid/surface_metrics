@@ -10,6 +10,7 @@ title: "Description of Surface Metrics"
 fontsize: 12pt
 # it's imporatnt when you knit to make sure that you knit to project directory
 # Knit -> Knit Directory -> Project Directory
+# https://stirlingcodingclub.github.io/Manuscripts_in_Rmarkdown/Rmarkdown_notes.html
 ---
 
 ```{r setup, include=FALSE}
@@ -21,6 +22,18 @@ knitr::opts_chunk$set(echo = TRUE)
 Landscape metrics implemented in FragStats have been a rule of thumb in the analysis of landscape pattern for several reasons. First of all, it was a useful tool to quantify landscape patch and pattern structure as it was presented in all landscape ecological studies. Secondly, there is a huge set a well-defined quantitative metrics available for any task whether it is landscape diversity, complexity or simply fragmentation. And last but not least there is a specially designed and well-documented software package available for free.
 
 But McGarigal and X (XXX) suggested that a classical view of landscape patch-and-matrix matrix is too simplified comparing to real-world continuity. They suggested that discrete models should be replaced (or at least try to be) by a gradient model. And while at first it was pretty difficult to find and represent landscape gradients, with the invention of advanced geoinformational data representation and storage capabilities, as well as billions of terabytes of remote sensing data continuously becoming available for free it became more clear that it is much easier and appropriate to use gradient model to represent and analyze landscape and its properties.
+
+# Training Data
+
+For illustration I am using two datasets from the ./data folder.
+
+```{r, echo = FALSE, eval = TRUE, message = FALSE, fig.width = 5, fig.height = 5, fig.fullwidth = TRUE, fig.cap = "Digital elevation model"}
+par(mar = c(.2, .2, .2, .2))
+library(raster)
+dem <- raster("./data/local_mean_32636.tif")
+plot(dem, col = terrain.colors(255), axes = F, box = F)
+
+```
 
 # Surface Metrics
 
